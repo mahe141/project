@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            
+            body {
+                
+                margin: 0;
+                font-family:'Times New Roman', Times, serif;
+            }
+            
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            .topnav a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .topnav a.active {
+                background-color: #47c59d76;
+                color: white;
+            }
+
+            .topnav .icon {
+                display: none;
+            }
+
+            @media screen and (max-width: 600px) {
+                .topnav a:not(:first-child) {display: none;}
+                .topnav a.icon {
+                    float: right;
+                    display: block;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                .topnav.responsive {position: relative;}
+                .topnav.responsive .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+                .topnav.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: left;
+                }
+                
+            }
+            table{
+                border:2px solid black;text-align: center;
+                width:800px;
+            }
+            table tr{
+                font-size: larger;
+            }
+            table tr td{
+                padding-top:20px;
+            }
+            
+            .container{
+                height:50px;
+            }
+            
+            table{
+                margin:auto;
+                font-size: large;
+            }
+            #countText{
+            animation: color-change 3s infinite;
+            }
+
+            @keyframes color-change {
+            0% { color: rgb(241, 241, 241); }
+            50% { color: rgb(144, 208, 161); }
+            100% { color: rgb(148, 163, 89); }
+            }
+
+        
+            
+            
+            #myInput {
+            background-image: url('/css/searchicon.png');
+            background-position: 10px 12px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+            }
+            
+            #myUL {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            }
+            
+            #myUL li a {
+            border: 1px solid #ddd;
+            margin-top: -1px; /* Prevent double borders */
+            background-color: #f6f6f6;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block
+            }
+            
+            #myUL li a:hover:not(.header) {
+            background-color: #eee;
+            }
+            div li{
+              padding-left:5px ;
+            }
+            @media only screen and (min-width: 1200px) {
+               
+                    
+                   
+            }
+        </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    </head>
+    <body style="background-color: #29a276;">
+
+        <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Agriguide  <i class="fa fa-leaf"></i></a>
+        <a href="" title="not ready yet">Signup</a>
+        <a href="contact.html">Contact</a>
+        <a href="" title="not ready yet">Login</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction1()">
+            <i class="fa fa-bars"></i>
+        </a>
+        </div>
+        <br>
+        <center>
+            <div class="container" style="display:grid; height: 100%; width:100%;margin-top:21px;">
+                <div class="jumbotron" style="height:100%;width:100%;">
+                    <h1 class="display-4" style="text-align: center;font-size:50px;" id="countText">Crop_Details</h1><br><br>
+                    <p class="lead">This is a place where you can find each and every thing about the crop that you want to grow.</p>
+                    <hr class="my-4">
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+    
+                    <ul id="myUL">
+                    
+                    <li data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5"><a href="#">Rice</a></li>
+                    <div class="collapse" id="collapseExample5">
+                      <table style="height:100%;width:100%;">
+                        <tr><td colspan="4" style="text-align: center;font-size:xx-large;">Rice</td></tr>
+                        <tr><td colspan="4"><img height="90%" width="90%" src="Images/rice.jfif"></td></tr>
+                        <tr><td><b>Name :</b> Rice</td><td><b>Span :</b> 90-110 days</td></tr>
+                        <tr><td><b>Type :</b> Kharif/winter</td><td><b>Water Required for crop :</b> 4000-5000 per kg</td></tr>
+                        <tr><td> <b>Pesticides : </b>fungicides, herbicides, insecticides.</td><td><b>Pests/dieseases : </b>Planthoppers and Leafhoppers</td></tr>
+                        <tr><td><b>Quantity demanded of rice :</b> 51 million tons per year.</td><td><b>Maximum price of Rice :</b> 5400.00 INR/Quinta</td></tr>
+                        <tr><td><b>Chance of getting Profit:</b> 59%</td><td><b>Chance of getting Loss :</b> 41%;</td></tr>
+                        <tr><td colspan="4" ><iframe width="90%" height="90%" src="https://www.youtube.com/embed/mDE-Xd2J6aA" title="Cultivation - Life Cycle of Rice" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td></tr>
+                      </table>
+                    </div>
+                    <li data-bs-toggle="collapse" data-bs-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample6" style="width:100%;"><a href="#">Wheat</a></li>
+                    <div class="collapse" id="collapseExample6" style="height:50%;width:100%;">
+                      <table style="height:100%;width:100%;padding-bottom: 10px;">
+                        <tr><td colspan="4" style="text-align: center;font-size:xx-large;">Wheat</td></tr>
+                        <tr><td colspan="4"><img height="90%" width="90%" src="Images/wheat.jpg"></td></tr>
+                        <tr><td><b>Name :</b> Wheat</td><td><b>Span :</b> 360 days</td></tr>
+                        <tr><td><b>Type :</b> Winter and spring wheat </td><td><b>Water Required for crop :</b>  2731 m3 to 3760m3 water per hectare</td></tr>
+                        <tr><td> <b>Pesticides : </b>organochlorines, organophosphates, and synthetic pyrethroids</td><td><b>Pests/dieseases : </b>Wheat midges, Hessian Fly, Wheat Stem Sawfly, Thrips, Aphids, Cutworms, Armyworms, Cereal Leaf Beetle, Helicoverpa species, and Mites.</td></tr>
+                        <tr><td><b>Quantity demanded of Wheat :</b> 778 million metric tons</td><td><b>Maximum price of Wheat :</b> 270.5 per KG</td></tr>
+                        <tr><td><b>Chance of getting Profit:</b> 60%</td><td><b>Chance of getting Loss :</b> 40%;</td></tr>
+                        <tr><td colspan="4" ><iframe width="90%" height="90%" src="https://www.youtube.com/embed/JN0ICendQns" title="Wheat Farming / Wheat Cultivation Guide | How to grow Wheat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td></tr>
+                      </table>
+                    </div>
+                    <li data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4"><a href="#">Greengram</a></li>
+                    <div class="collapse" id="collapseExample4">
+                      <table style="height:100%;width:100%;padding-bottom: 10px;">
+                        <tr><td colspan="4" style="text-align: center;font-size:xx-large;">Green gram</td></tr>
+                        <tr><td colspan="4"><img height="90%" width="90%" src="https://apseeds.ap.gov.in/Assets/Images/inner-pages-img/GreenGram.jpg"></td></tr>
+                        <tr><td><b>Name :</b>Greengram</td><td><b>Span :</b> 20-30 post 9wing</td></tr>
+                        <tr><td><b>Type :</b> Kharif / Summer </td><td><b>Water Required for crop :</b> 300-400nm</td></tr>
+                        <tr><td> <b>Pesticides : </b>diafenthiuron 50 wp @ 240 gm per acre 200 liters of water or acetamiprid 20 sp @ 40 gm per 200 liters of water.
+                        </td><td><b>Pests/dieseases : </b>pod borers, stem borers, leaf miners, foliage caterpillars, cutworms, jassids, aphids and whiteflies</td></tr>
+                        <tr><td><b>Quantity demanded of greengram :</b> 220.5 lakh tons</td><td><b>Maximum price of greengram :</b>500 per Quinta</td></tr>
+                        <tr><td><b>Chance of getting Profit:</b> 74%</td><td><b>Chance of getting Loss :</b> 26%;</td></tr>
+                        <tr><td colspan="4" ><iframe width="90%" height="90%" src="https://www.youtube.com/embed/aC2Nmq7W800" title="Mungbean- Greengram cultivation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td></tr>
+                      </table>
+                    </div>
+                    <li data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3"><a href="#">Tomato</a></li>
+                    <div class="collapse" id="collapseExample3">
+                      <table style="height:100%;width:100%;padding-bottom: 10px;">
+                        <tr><td colspan="4" style="text-align: center;font-size:xx-large;">Tomato</td></tr>
+                        <tr><td colspan="4"><img height=90%" width="90%" src="https://agricultureguruji.com/wp-content/uploads/2018/09/tomato-2643774_1280.jpg"></td></tr>
+                        <tr><td><b>Name :</b>Tomato</td><td><b>Span :</b> 90-150</td></tr>
+                        <tr><td><b>Type :</b> Autumn / Spring Summer </td><td><b>Water Required for crop :</b> 400-600nm</td></tr>
+                        <tr><td> <b>Pesticides : </b>diafenthiuron 50 wp @ 240 gm per acre 200 liters of water or acetamiprid 20 sp @ 40 gm per 200 liters of water.
+                        </td><td><b>Pests/dieseases : </b>pod borers, stem borers, leaf miners, foliage caterpillars, cutworms, jassids, aphids and whiteflies</td></tr>
+                        <tr><td><b>Quantity demanded of Tomato :</b> 220.5 lakh tons</td><td><b>Maximum price of Tomato :</b>500 per Quinta</td></tr>
+                        <tr><td><b>Chance of getting Profit:</b> 74%</td><td><b>Chance of getting Loss :</b> 26%;</td></tr>
+                        <tr><td colspan="4" ><iframe width="90%" height="90%" src="https://www.youtube.com/embed/FSFBPtRO4HU" title="How to Grow Tomatoes - Tomato Farming | Tomato Cultivation - Complete Informations" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td></tr>
+                      </table>
+                    </div>
+                    <li data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2"><a href="#">Brinjal</a></li>
+                    <div class="collapse" id="collapseExample2">
+                      <table style="height:100%;width:100%;padding-bottom: 10px;">
+                        <tr><td colspan="4" style="text-align: center;font-size:xx-large;">Brinjal</td></tr>
+                        <tr><td colspan="4"><img height="90%" width="90%" src="https://img.krishijagran.com/media/52141/2214idea99eggplant-cultivation-ready-to-harvest-fruits.jpg"></td></tr>
+                        <tr><td><b>Name :</b>Brinjal</td><td><b>Span :</b> 90-150</td></tr>
+                        <tr><td><b>Type :</b> Autumn / Spring Summer </td><td><b>Water Required for crop :</b> 400-600nm</td></tr>
+                        <tr><td> <b>Pesticides : </b>diafenthiuron 50 wp @ 240 gm per acre 200 liters of water or acetamiprid 20 sp @ 40 gm per 200 liters of water.
+                        </td><td><b>Pests/dieseases : </b>pod borers, stem borers, leaf miners, foliage caterpillars, cutworms, jassids, aphids and whiteflies</td></tr>
+                        <tr><td><b>Quantity demanded of Brinjal :</b> 220.5 lakh tons</td><td><b>Maximum price of Brinjal :</b>500 per Quinta</td></tr>
+                        <tr><td><b>Chance of getting Profit:</b> 74%</td><td><b>Chance of getting Loss :</b> 26%;</td></tr>
+                        <tr><td colspan="4" ><iframe width90%" height="90%" src="https://www.youtube.com/embed/dCtwbOVBwX0" title="Cultivation - Life Cycle of Brinjal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td></tr>
+                      </table>
+                    </div>
+                    <li data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1"><a href="#">LadysFinger</a></li>
+                    <div class="collapse" id="collapseExample1">
+                      <table style="height:100%;width:100%;padding-bottom: 10px;">
+                        <tr><td colspan="4" style="text-align: center;font-size:xx-large;">LadysFinger</td></tr>
+                        <tr><td colspan="4"><img height="90%" width="90%" src="https://m.media-amazon.com/images/I/81p1q9T8L1L._SL1500_.jpg"></td></tr>
+                        <tr><td><b>Name :</b>LadysFinger</td><td><b>Span :</b> 90-150</td></tr>
+                        <tr><td><b>Type :</b> Autumn / Spring Summer </td><td><b>Water Required for crop :</b> 400-600nm</td></tr>
+                        <tr><td> <b>Pesticides : </b>diafenthiuron 50 wp @ 240 gm per acre 200 liters of water or acetamiprid 20 sp @ 40 gm per 200 liters of water.
+                        </td><td><b>Pests/dieseases : </b>pod borers, stem borers, leaf miners, foliage caterpillars, cutworms, jassids, aphids and whiteflies</td></tr>
+                        <tr><td><b>Quantity demanded of LadysFinger :</b> 220.5 lakh tons</td><td><b>Maximum price of LadysFinger :</b>500 per Quinta</td></tr>
+                        <tr><td><b>Chance of getting Profit:</b> 74%</td><td><b>Chance of getting Loss :</b> 26%;</td></tr>
+                        <tr><td colspan="4" ><iframe width="90%" height="90%" src="https://www.youtube.com/embed/ybEUoJnqlEY" title="Ladies finger (Okra) Agriculture - Lady finger Farming - Cultivation of ladies finger" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td></tr>
+                      </table>
+                    </div>
+                  
+                    <li data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><a href="#">Radish</a></li>
+                    <div class="collapse" id="collapseExample" >
+                      <table style="height:100%;width:100%;padding-bottom: 10px;;">
+                        <tr><td colspan="4" style="text-align: center;font-size:xx-large;">Radish</td></tr>
+                        <tr><td colspan="4"><img height="90%" width="90%" src="https://www.agrifarming.in/wp-content/uploads/2015/03/Growing-Radish..jpg"></td></tr>
+                        <tr><td><b>Name :</b>Radish</td><td><b>Span :</b> 90-150</td></tr>
+                        <tr><td><b>Type :</b> Autumn / Spring Summer </td><td><b>Water Required for crop :</b> 400-600nm</td></tr>
+                        <tr><td> <b>Pesticides : </b>diafenthiuron 50 wp @ 240 gm per acre 200 liters of water or acetamiprid 20 sp @ 40 gm per 200 liters of water.
+                        </td><td><b>Pests/dieseases : </b>pod borers, stem borers, leaf miners, foliage caterpillars, cutworms, jassids, aphids and whiteflies</td></tr>
+                        <tr><td><b>Quantity demanded of Radish:</b> 220.5 lakh tons</td><td><b>Maximum price of Radish :</b>500 per Quinta</td></tr>
+                        <tr><td><b>Chance of getting Profit:</b> 74%</td><td><b>Chance of getting Loss :</b> 26%;</td></tr>
+                        <tr><td colspan="4" ><iframe width="90%" height="90%" src="https://www.youtube.com/embed/LzFrX0uJskI" title="How to grow Radish: Step by step complete guide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td></tr>
+                      </table>
+                    </div>
+                    </ul>
+    
+                    <script>
+                    function myFunction() {
+                        var input, filter, ul, li, a, i, txtValue;
+                        input = document.getElementById("myInput");
+                        filter = input.value.toUpperCase();
+                        ul = document.getElementById("myUL");
+                        li = ul.getElementsByTagName("li");
+                        for (i = 0; i < li.length; i++) {
+                            a = li[i].getElementsByTagName("a")[0];
+                            txtValue = a.textContent || a.innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                li[i].style.display = "";
+                            } else {
+                                li[i].style.display = "none";
+                            }
+                        }
+                    }
+                    </script>
+            </div>
+            
+    
+        </center>
+      <br>
+      <div class="container my-5">
+        <!-- Footer -->
+        <footer
+                class="text-center text-lg-start text-white"
+                style="background-color: #45526e"
+                >
+          <!-- Grid container -->
+          <div class="container p-4 pb-0" style="height:auto;">
+            <!-- Section: Links -->
+            <section class="">
+              <!--Grid row-->
+              <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                  <h6 class="text-uppercase mb-4 font-weight-bold">
+                    Agriguide
+                  </h6>
+                  <p>It is a user friendly website which mainly focuses on farmers.We are trying our level best to help the farmers.This website consists of many features.</p>
+                </div>
+                <!-- Grid column -->
+      
+                <hr class="w-100 clearfix d-md-none" />
+      
+                <!-- Grid column -->
+                
+      
+                <!-- Grid column -->
+                
+      
+                <!-- Grid column -->
+                
+      
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                  <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                  <p ><i class="glyphicon glyphicon-user" ></i> Mahesh Duggi</p>
+                  <p><i class="glyphicon glyphicon-envelope"></i> maheshduggi456@gmail.com</p>
+                  <p><i class="fa fa-phone"></i> +91 9441410528</p>
+                  <p><i class="fa fa-phone"></i> +91 7416435214</p>
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+      
+            <hr class="my-3">
+      
+            <!-- Section: Copyright -->
+            <section class="p-3 pt-0">
+              <div class="row d-flex align-items-center">
+                <!-- Grid column -->
+                <div class="col-md-7 col-lg-8 text-center text-md-start">
+                  <!-- Copyright -->
+                  <div class="p-3">
+                    © 2020 Copyright:
+                    <a class="text-white" href="#"
+                       >Mahesh__duggi</a
+                      >
+                  </div>
+                  <!-- Copyright -->
+                </div>
+                <!-- Grid column -->
+      
+                <!-- Grid column -->
+                <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                  <!-- Facebook -->
+                  <a
+                     class="btn btn-outline-light btn-floating m-1"
+                     class="text-white"
+                     role="button"
+                     ><i class="fa fa-whatsapp"></i
+                    ></a>
+      
+                  <!-- Twitter -->
+                  
+      
+                  
+      
+                  <!-- Instagram -->
+                  <a
+                     class="btn btn-outline-light btn-floating m-1"
+                     class="text-white"
+                     role="button"
+                     ><i class="fa fa-instagram"></i
+                    ></a>
+                </div>
+                <!-- Grid column -->
+              </div>
+            </section>
+            <!-- Section: Copyright -->
+          </div>
+          <!-- Grid container -->
+        </footer>
+        <!-- Footer -->
+      </div>
+        <script>
+        function myFunction1() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+        }
+        </script>
+
+    </body>
+</html>

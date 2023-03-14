@@ -1,46 +1,23 @@
-const firebaseApp = firebase.initializeApp({apiKey: "AIzaSyACiTIl45lIDYtDXGFWTbLoWedGIe51XVM",
-authDomain: "mahe543-76649.firebaseapp.com",
-projectId: "mahe543-76649",
-storageBucket: "mahe543-76649.appspot.com",
-messagingSenderId: "956465915206",
-appId: "1:956465915206:web:bb08230da541b912027147",
-measurementId: "G-36BHSDPC5J"});
-const db = firebaseApp.firestore();
-const auth = firebaseApp.auth();
+const firebaseApp = firebase.initializeApp({ 
+    apiKey: "AIzaSyBzfY9VCYpECTIPgjU4eVBVAWccvJSXZ_E",
+  authDomain: "sampleweb1-4af1e.firebaseapp.com",
+  databaseURL: "https://sampleweb1-4af1e-default-rtdb.firebaseio.com",
+  projectId: "sampleweb1-4af1e",
+  storageBucket: "sampleweb1-4af1e.appspot.com",
+  messagingSenderId: "373057543605",
+  appId: "1:373057543605:web:0074e82e1ff06cf14c4dfc",
+  measurementId: "G-1HQJLE3MNX"
+})
+const db = firebaseApp.firestore()
+const auth = firebaseApp.auth()
 
-const login=()=>{
-    const email=document.getElementById("email").value;
-    const password=document.getElementById("password").value;
-
-    firebase.auth().signInWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-    // Signed in
-    var user = userCredential.user;
-    alert("loggedin suceess");
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    alert(errorMessage);
-  });
-}
-const signup=()=>{
-    const email=document.getElementById("email").value;
-    const password=document.getElementById("password").value;
-    console.log(email,password);
-firebase.auth().createUserWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-    // Signed in 
-    var user = userCredential.user;
-    //usercredential is a variable we can keep any thing
-    alert("you are signed up");
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(errorCode,errorMessage);
-    // ..
-  });
-}
+firebase.auth().onAuthStateChanged((user)=>{
+    if(!user){
+        location.replace("login.html");
+    }
+    else{
+        console.log('hi mae');
+        alert("Hello, "+user.email);
+        document.getElementById("colorText1").innerHTML="Hello, "+user.email;
+    }
+})
